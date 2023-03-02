@@ -22,20 +22,30 @@ let buttonEmailElement = document.getElementById("buttonEmail")
 
 // Fare una lista delle email ammesse
 
-let email = ["mattia@gmail.com", "marco@gmail.com", "luca@gmail.com", "matteo@gmail.com"];
+const email = ["mattia@gmail.com", "marco@gmail.com", "luca@gmail.com", "matteo@gmail.com"];
 
 
 buttonEmailElement.addEventListener("click", function () {
+    
+    let mailFound = false;
     
     for (let index = 0; index < email.length; index++) {
 
         if (textEmailElement.value == email[index] ) {
 
-            console.log("trovata");
+            mailFound = true;
             
         }
         
-        
     }
+
+    // Se l'email è corretta do il benvenuto altrimenti no
+
+    if (mailFound) {
+        console.log("Welcome");
+    
+    } else {
+        console.log("Error");
+    }
+
 })
- 
